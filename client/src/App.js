@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import apiClient from './services/ApiClient';
-import FontList from './FontList';
+import FontCards from './FontCards';
 
 const App = () => {
   const [fonts, setFontList] = useState([]);
@@ -32,7 +32,9 @@ const App = () => {
 
       <nav>Nav</nav>
 
-      <FontList fonts={fonts} />
+      <div className="card-container">
+        <FontCards fonts={fonts} />
+      </div>
     </div>
   );
 };

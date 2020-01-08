@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import apiClient from './services/ApiClient';
+import FontList from './FontList';
 
-function App() {
+const App = () => {
+  const [fonts, setFontList] = useState([]);
+
+  const updateFonts = () => {
+    apiClient.getFonts().then(fonts => {
+      console.log('this is fonts, app.js', fonts);
+      setFontList(fonts.items);
+    });
+  };
+
+  useEffect(() => {
+    updateFonts();
+  }, []);
+
   return (
     <div className="container">
       <div className="header-container">
@@ -16,8 +31,10 @@ function App() {
       </div>
 
       <nav>Nav</nav>
+
+      <FontList fonts={fonts} />
     </div>
   );
-}
+};
 
 export default App;

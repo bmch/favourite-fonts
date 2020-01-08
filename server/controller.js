@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const fetch = require('node-fetch');
-const URL = `https://www.googleapis.com/webfonts/v1/webfonts?key=${process.env.GOOGLE_FONT_DEVELOPER_KEY}`;
+const URL = `https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=${process.env.GOOGLE_FONT_DEVELOPER_KEY}`;
 
 exports.getResponse = (req, res) => {
   fetch(URL)

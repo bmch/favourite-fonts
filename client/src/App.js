@@ -7,9 +7,9 @@ import NavBar from './NavBar';
 const App = () => {
   const initialState = { originalFonts: [], displayFonts: [], searchTerm: '' };
   const [fonts, setFontList] = useState(initialState);
+  const [sampleText, setSampleText] = useState('Type Something');
 
   const handleChange = e => {
-    console.log('search term is', e.target.value);
     setFontList({
       searchTerm: e.target.value,
       originalFonts: fonts.originalFonts,
@@ -17,16 +17,14 @@ const App = () => {
     });
   };
 
-  const filterFonts = () => {
-    let list = fonts.originalFonts;
-    console.log('this is list', list);
-    let q = fonts.searchTerm;
-    console.log('this is query', q);
+  const handleChangeText = e => {
+    setSampleText(e.target.value);
+  };
 
-    return list.filter(font => {
-      return font.family.toLowerCase().indexOf(q) !== -1; // returns true or false
+  const filterFonts = () => {
+    return fonts.originalFonts.filter(font => {
+      return font.family.toLowerCase().indexOf(fonts.searchTerm) !== -1; // returns true or false
     });
-    //  setFontList({ displayFonts: list });
   };
 
   const updateFonts = () => {
@@ -52,10 +50,15 @@ const App = () => {
         </div>
       </div>
 
-      <NavBar handleChange={handleChange} searchTerm={fonts.searchTerm} />
+      <NavBar
+        handleChange={handleChange}
+        searchTerm={fonts.searchTerm}
+        handleChangeText={handleChangeText}
+        sampleText={sampleText}
+      />
 
       <div className="card-container">
-        <FontCards fonts={fonts.displayFonts} />
+        <FontCards fonts={fonts.displayFonts} sampleText={sampleText} />
       </div>
     </div>
   );

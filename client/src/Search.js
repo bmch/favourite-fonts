@@ -5,7 +5,7 @@ export default function Search({ handleChange, searchTerm }) {
     <label>
       <input
         type="text"
-        values={searchTerm}
+        value={searchTerm}
         onChange={handleChange}
         placeholder="search..."
       />

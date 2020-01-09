@@ -1,7 +1,7 @@
 import React from 'react';
 
 function FontCards({ fonts }) {
-  return fonts.slice(0, 15).map((font, index) => {
+  return fonts.map((font, index) => {
     return (
       <div
         className="font-card"

@@ -36,3 +36,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+}

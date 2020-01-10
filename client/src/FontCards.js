@@ -1,12 +1,12 @@
 import React from 'react';
 
-function FontCards({ fonts, sampleText }) {
+function FontCards({ fonts, sampleText, fontSize }) {
   return fonts.map((font, index) => {
     return (
       <div
         className="font-card"
         key={index}
-        style={{ fontFamily: `${font.family}` }}
+        style={{ fontFamily: `${font.family}`, fontSize: `${fontSize}` }}
       >
         <link
           rel="stylesheet"

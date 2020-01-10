@@ -8,19 +8,20 @@ const App = () => {
   const initialState = { originalFonts: [], displayFonts: [], searchTerm: '' };
   const [fonts, setFontList] = useState(initialState);
   const [sampleText, setSampleText] = useState('Type Something');
+  const [fontSize, setFontSize] = useState('32px');
 
   const handleChange = e => {
     console.log('target value is ', e.target.value);
-    setFontList(
-      {
-        searchTerm: e.target.value,
-        originalFonts: fonts.originalFonts,
-        displayFonts: fonts.displayFonts
-      }
-      // () => {
-      //   filterFonts();
-      // }
-    );
+    setFontList({
+      searchTerm: e.target.value,
+      originalFonts: fonts.originalFonts,
+      displayFonts: fonts.displayFonts
+    });
+  };
+
+  const handleChangeFontSize = e => {
+    console.log('this is the target value', e.target.value);
+    setFontSize(e.target.value);
   };
 
   const handleChangeText = e => {
@@ -29,6 +30,11 @@ const App = () => {
 
   const filterFonts = () => {
     if (!fonts.searchTerm) {
+      setFontList({
+        searchTerm: fonts.searchTerm,
+        originalFonts: fonts.originalFonts,
+        displayFonts: fonts.originalFonts
+      });
       return;
     }
     const dispFont = fonts.originalFonts.filter(font => {
@@ -73,10 +79,15 @@ const App = () => {
         searchTerm={fonts.searchTerm || ''}
         handleChangeText={handleChangeText}
         sampleText={sampleText}
+        handleChangeFontSize={handleChangeFontSize}
       />
 
       <div className="card-container">
-        <FontCards fonts={fonts.displayFonts} sampleText={sampleText} />
+        <FontCards
+          fonts={fonts.displayFonts}
+          sampleText={sampleText}
+          fontSize={fontSize}
+        />
       </div>
     </div>
   );

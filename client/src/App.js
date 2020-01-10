@@ -10,11 +10,17 @@ const App = () => {
   const [sampleText, setSampleText] = useState('Type Something');
 
   const handleChange = e => {
-    setFontList({
-      searchTerm: e.target.value,
-      originalFonts: fonts.originalFonts,
-      displayFonts: filterFonts()
-    });
+    console.log('target value is ', e.target.value);
+    setFontList(
+      {
+        searchTerm: e.target.value,
+        originalFonts: fonts.originalFonts,
+        displayFonts: fonts.displayFonts
+      }
+      // () => {
+      //   filterFonts();
+      // }
+    );
   };
 
   const handleChangeText = e => {
@@ -22,8 +28,16 @@ const App = () => {
   };
 
   const filterFonts = () => {
-    return fonts.originalFonts.filter(font => {
+    if (!fonts.searchTerm) {
+      return;
+    }
+    const dispFont = fonts.originalFonts.filter(font => {
       return font.family.toLowerCase().indexOf(fonts.searchTerm) !== -1; // returns true or false
+    });
+    setFontList({
+      searchTerm: fonts.searchTerm,
+      originalFonts: fonts.originalFonts,
+      displayFonts: dispFont
     });
   };
 
@@ -36,6 +50,10 @@ const App = () => {
   useEffect(() => {
     updateFonts();
   }, []);
+
+  useEffect(() => {
+    filterFonts();
+  }, [fonts.searchTerm]);
 
   return (
     <div className="container">
@@ -52,7 +70,7 @@ const App = () => {
 
       <NavBar
         handleChange={handleChange}
-        searchTerm={fonts.searchTerm}
+        searchTerm={fonts.searchTerm || ''}
         handleChangeText={handleChangeText}
         sampleText={sampleText}
       />

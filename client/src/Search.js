@@ -7,7 +7,7 @@ export default function Search({ handleChange, searchTerm }) {
         type="text"
         value={searchTerm}
         onChange={handleChange}
-        placeholder="search..."
+        placeholder="Search fonts"
       />
     </label>
   );

@@ -31,6 +31,11 @@
 }
 
 .nav-bar {
+  border: 1.5px solid #dadde3;
+  border-radius: 45px;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 5px 35px;
   display: flex;
   flex-direction: row;
 }
@@ -49,6 +54,7 @@
 }
 
 .font-family {
+  margin-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
   /* border: 2px dashed green; */
@@ -60,4 +66,23 @@
   /* border: 2px dashed red; */
   height: 80%;
   vertical-align: middle;
+}
+
+input {
+  border: none;
+  font-size: 1.2rem;
+}
+
+.header-container {
+  max-width: 1260px;
+  margin: 30px auto;
+  color: #72757d;
+}
+
+.header-left {
+  font-size: 1.4rem;
+}
+
+.header-right {
+  font-size: 0.9rem;
 }

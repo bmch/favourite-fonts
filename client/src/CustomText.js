@@ -7,7 +7,7 @@ export default function CustomText({ sampleText, handleChangeText }) {
         type="text"
         value={sampleText}
         onChange={handleChangeText}
-        placeholder="search..."
+        placeholder="Type something"
       />
     </div>
   );

@@ -5,7 +5,12 @@ import FontCards from './FontCards';
 import NavBar from './NavBar';
 
 const App = () => {
-  const initialState = { originalFonts: [], displayFonts: [], searchTerm: '' };
+  const initialState = {
+    originalFonts: [],
+    displayFonts: [],
+    searchTerm: '',
+    favorites: []
+  };
   const [fonts, setFontList] = useState(initialState);
   const [sampleText, setSampleText] = useState('Type Something');
   const [fontSize, setFontSize] = useState('32px');
@@ -15,7 +20,20 @@ const App = () => {
     setFontList({
       searchTerm: e.target.value,
       originalFonts: fonts.originalFonts,
-      displayFonts: fonts.displayFonts
+      displayFonts: fonts.displayFonts,
+      favorites: fonts.favorites
+    });
+  };
+
+  const addToFavorites = font => {
+    console.log(font.family);
+    console.log('this is fonts.favorites', fonts);
+
+    setFontList({
+      searchTerm: fonts.searchTerm,
+      originalFonts: fonts.originalFonts,
+      displayFonts: fonts.displayFonts,
+      favorites: fonts.favorites.concat(font)
     });
   };
 
@@ -23,10 +41,20 @@ const App = () => {
     setFontList({
       searchTerm: '',
       originalFonts: fonts.originalFonts,
-      displayFonts: fonts.originalFonts
+      displayFonts: fonts.originalFonts,
+      favorites: fonts.favorites
     });
     setSampleText('Type Something');
     setFontSize('32px');
+  };
+
+  const displayFavorites = () => {
+    setFontList({
+      searchTerm: fonts.searchTerm,
+      originalFonts: fonts.originalFonts,
+      displayFonts: fonts.favorites,
+      favorites: fonts.favorites
+    });
   };
 
   const handleChangeFontSize = e => {
@@ -59,7 +87,12 @@ const App = () => {
 
   const updateFonts = () => {
     apiClient.getFonts().then(fonts => {
-      setFontList({ originalFonts: fonts.items, displayFonts: fonts.items });
+      setFontList({
+        originalFonts: fonts.items,
+        displayFonts: fonts.items,
+        favorites: [],
+        searchTerm: ''
+      });
     });
   };
 
@@ -77,6 +110,11 @@ const App = () => {
         <div className="header-left">Google Fonts </div>
 
         <div className="header-right">
+          <div className="menu-item">
+            <a href="#" onClick={displayFavorites}>
+              FAVORITES!!
+            </a>
+          </div>
           <div className="menu-item">
             <a href="#">CATALOG</a>
           </div>
@@ -107,6 +145,7 @@ const App = () => {
           fonts={fonts.displayFonts}
           sampleText={sampleText}
           fontSize={fontSize}
+          addToFavorites={addToFavorites}
         />
       </div>
     </div>

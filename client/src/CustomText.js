@@ -4,6 +4,7 @@ export default function CustomText({ sampleText, handleChangeText }) {
   return (
     <div>
       <input
+        className="custom-text-input"
         type="text"
         value={sampleText}
         onChange={handleChangeText}

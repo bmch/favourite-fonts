@@ -2,6 +2,7 @@ import React from 'react';
 import Search from './Search';
 import CustomText from './CustomText';
 import SelectFontSize from './SelectFontSize';
+import Reset from './Reset';
 
 export default function NavBar({
   handleChange,
@@ -9,7 +10,8 @@ export default function NavBar({
   sampleText,
   handleChangeText,
   fontSize,
-  handleChangeFontSize
+  handleChangeFontSize,
+  reset
 }) {
   // search, custom text, font-size, dark/light mode, grid/list mode, and reset
   return (
@@ -20,6 +22,7 @@ export default function NavBar({
         handleChangeFontSize={handleChangeFontSize}
         fontSize={fontSize}
       />
+      <Reset reset={reset} />
     </div>
   );
 }

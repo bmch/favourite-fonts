@@ -19,6 +19,16 @@ const App = () => {
     });
   };
 
+  const reset = () => {
+    setFontList({
+      searchTerm: '',
+      originalFonts: fonts.originalFonts,
+      displayFonts: fonts.originalFonts
+    });
+    setSampleText('Type Something');
+    setFontSize('32px');
+  };
+
   const handleChangeFontSize = e => {
     console.log('this is the target value', e.target.value);
     setFontSize(e.target.value);
@@ -67,10 +77,18 @@ const App = () => {
         <div className="header-left">Google Fonts </div>
 
         <div className="header-right">
-          <div className="menu-item">CATALOG</div>
-          <div className="menu-item">FEATURED</div>
-          <div className="menu-item">ARTICLES</div>
-          <div className="menu-item">ABOUT</div>
+          <div className="menu-item">
+            <a href="#">CATALOG</a>
+          </div>
+          <div className="menu-item">
+            <a href="#">FEATURED</a>
+          </div>
+          <div className="menu-item">
+            <a href="#">ARTICLES</a>
+          </div>
+          <div className="menu-item">
+            <a href="#">ABOUT</a>
+          </div>
         </div>
       </div>
 
@@ -80,6 +98,8 @@ const App = () => {
         handleChangeText={handleChangeText}
         sampleText={sampleText}
         handleChangeFontSize={handleChangeFontSize}
+        reset={reset}
+        fontSize={fontSize}
       />
 
       <div className="card-container">

@@ -65,7 +65,9 @@ const App = () => {
   };
 
   const handleChangeText = e => {
-    setSampleText(e.target.value);
+    if (!e.target.value) {
+      setSampleText('Type Something');
+    } else setSampleText(e.target.value);
   };
 
   const filterFonts = () => {

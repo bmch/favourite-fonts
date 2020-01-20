@@ -136,3 +136,18 @@ button {
 .disappear {
   display: none;
 }
+
+.footer {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+
+  z-index: 99; /* Make sure it does not overlap */
+
+  padding: 15px; /* Some padding */
+  font-size: 1rem;
+  color: #555;
+
+  max-width: 700px;
+  left: 50%;
+  transform: translateX(-50%);
+}

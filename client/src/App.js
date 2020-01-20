@@ -170,6 +170,8 @@ const App = () => {
       <div>
         <ScrollToTop scrollButton={scrollButton} />
       </div>
+
+      <div className="footer">coded by bmch | 2020 | Pre-work Project</div>
     </div>
   );
 };

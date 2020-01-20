@@ -3,6 +3,7 @@ import './App.css';
 import apiClient from './services/ApiClient';
 import FontCards from './FontCards';
 import NavBar from './NavBar';
+import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   const initialState = {
@@ -14,6 +15,7 @@ const App = () => {
   const [fonts, setFontList] = useState(initialState);
   const [sampleText, setSampleText] = useState('Type Something');
   const [fontSize, setFontSize] = useState('32px');
+  const [scrollButton, setScrollButton] = useState(false);
 
   const handleChange = e => {
     console.log('target value is ', e.target.value);
@@ -98,7 +100,24 @@ const App = () => {
 
   useEffect(() => {
     updateFonts();
+    window.addEventListener('scroll', handleScroll);
   }, []);
+
+  const handleScroll = () => {
+    // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    //   mybutton.style.display = "block";
+    // } else {
+    //   mybutton.style.display = "none";
+    // }
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      setScrollButton(true);
+    } else {
+      setScrollButton(false);
+    }
+  };
 
   useEffect(() => {
     filterFonts();
@@ -147,6 +166,9 @@ const App = () => {
           fontSize={fontSize}
           addToFavorites={addToFavorites}
         />
+      </div>
+      <div>
+        <ScrollToTop scrollButton={scrollButton} />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const router = require('./routes.js');
 
 app.use(router);
 
-const PORT = 3001 || process.env.PORT;
+const PORT = 5000 || process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(` ✅ 🚀 Server is listening on port ${PORT}`); // eslint-disable-line no-console

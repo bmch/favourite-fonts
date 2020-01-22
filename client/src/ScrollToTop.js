@@ -6,7 +6,7 @@ export default function ScrollToTop({ scrollButton }) {
       className={scrollButton ? 'scroll' : 'dissapear'}
       onClick={topFunction}
     >
-      <i class="fas fa-arrow-circle-up"></i>
+      <i className="fas fa-arrow-circle-up"></i>
     </div>
   );
 }

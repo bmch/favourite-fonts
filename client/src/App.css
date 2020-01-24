@@ -17,10 +17,29 @@
 .header-right {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  margin-right: 30px;
-  margin-left: 22px;
+  justify-content: space-around;
+  margin-right: 5%;
+  margin-left: 12%;
+}
+
+@media all and (min-width: 50em) {
+  .header-right {
+    font-size: 1.1rem;
+  }
+
+  .nav-bar {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .header-right {
+    font-size: 0.75rem;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+  }
 }
 
 .header-right a {
@@ -34,8 +53,8 @@
 }
 
 .menu-item {
-  padding: 5px;
-  margin: 5px;
+  padding: 1%;
+  margin: 2%;
 }
 
 .font-card {
@@ -50,11 +69,18 @@
   border: 1.5px solid #dadde3;
   border-radius: 45px;
   max-width: 1260px;
+  width: 80%;
   margin: 0 auto;
-  padding: 5px 15px;
+  padding: 10px 2%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+}
+
+.select-font-size {
+  display: block;
+
+  /* margin-bottom: 5px;
+  margin-top: 5px; */
 }
 
 .card-container {
@@ -85,14 +111,35 @@
   vertical-align: middle;
 }
 
-input {
+.search-fonts {
   border: none;
   font-size: 1.2rem;
+  margin-left: 7%;
+  /* margin-bottom: 5px;
+  margin-top: 5px; */
 }
 
 .reset {
-  margin-left: 20px;
+  margin-left: 6%;
   margin-right: 20px;
+  /* margin-bottom: 5px;
+  margin-top: 5px; */
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* Remove default arrow */
+  /* background-image: url(...); Add custom arrow */
+  font-size: 1.2rem;
+  margin-left: 6%;
+  margin-right: 6%;
+  background: white;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-left: 2px solid #cccccc;
 }
 
 .plus-icon {
@@ -114,7 +161,19 @@ button {
 }
 
 .custom-text-input {
-  width: 400px;
+  border: none;
+  font-size: 1.2rem;
+  border-left: 2px solid #cccccc;
+  width: 100%;
+  padding-left: 15px;
+  /* margin-bottom: 5px;
+  margin-top: 5px; */
+}
+.custom-div {
+  margin-left: 6%;
+
+  border: none;
+  /* width: 40%; */
 }
 
 .scroll {

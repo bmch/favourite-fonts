@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import apiClient from './services/ApiClient';
-import FontCards from './FontCards';
-import NavBar from './NavBar';
-import ScrollToTop from './ScrollToTop';
+import FontCards from './components/FontCards';
+import NavBar from './components/NavBar';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const initialState = {
@@ -18,7 +18,6 @@ const App = () => {
   const [scrollButton, setScrollButton] = useState(false);
 
   const handleChange = e => {
-    console.log('target value is ', e.target.value);
     setFontList({
       searchTerm: e.target.value,
       originalFonts: fonts.originalFonts,
@@ -30,7 +29,7 @@ const App = () => {
   const addToFavorites = font => {
     console.log(font.family);
     console.log('this is fonts.favorites', fonts);
-
+    alert(font.family + ' has been added to your favorite list');
     setFontList({
       searchTerm: fonts.searchTerm,
       originalFonts: fonts.originalFonts,
@@ -106,11 +105,6 @@ const App = () => {
   }, []);
 
   const handleScroll = () => {
-    // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    //   mybutton.style.display = "block";
-    // } else {
-    //   mybutton.style.display = "none";
-    // }
     if (
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
@@ -133,7 +127,7 @@ const App = () => {
         <div className="header-right">
           <div className="menu-item">
             <a href="#" onClick={displayFavorites}>
-              FAVORITES!!
+              FAVS!
             </a>
           </div>
           <div className="menu-item">

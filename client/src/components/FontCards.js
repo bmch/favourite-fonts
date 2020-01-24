@@ -1,5 +1,5 @@
 import React from 'react';
-import addIcon from './plus.png';
+import addIcon from '../img/plus.png';
 
 function FontCards({ fonts, sampleText, fontSize, addToFavorites }) {
   return fonts.map((font, index) => {

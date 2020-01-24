@@ -4,6 +4,7 @@ import apiClient from './services/ApiClient';
 import FontCards from './components/FontCards';
 import NavBar from './components/NavBar';
 import ScrollToTop from './components/ScrollToTop';
+import Loader from './components/Loader';
 
 const App = () => {
   const initialState = {
@@ -16,6 +17,7 @@ const App = () => {
   const [sampleText, setSampleText] = useState('Type Something');
   const [fontSize, setFontSize] = useState('32px');
   const [scrollButton, setScrollButton] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = e => {
     setFontList({
@@ -27,8 +29,6 @@ const App = () => {
   };
 
   const addToFavorites = font => {
-    console.log(font.family);
-    console.log('this is fonts.favorites', fonts);
     alert(font.family + ' has been added to your favorite list');
     setFontList({
       searchTerm: fonts.searchTerm,
@@ -59,7 +59,6 @@ const App = () => {
   };
 
   const handleChangeFontSize = e => {
-    console.log('this is the target value', e.target.value);
     setFontSize(e.target.value);
   };
 
@@ -89,7 +88,11 @@ const App = () => {
   };
 
   const updateFonts = () => {
+    // loading true
+    setLoading(true);
     apiClient.getFonts().then(fonts => {
+      // loading flase
+      setLoading(false);
       setFontList({
         originalFonts: fonts.items,
         displayFonts: fonts.items,
@@ -156,6 +159,7 @@ const App = () => {
       />
 
       <div className="card-container">
+        {loading && <Loader />}
         <FontCards
           fonts={fonts.displayFonts}
           sampleText={sampleText}

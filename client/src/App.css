@@ -4,8 +4,18 @@
   --grey-color-dark: rgba(0, 0, 0, 0.87);
   --bg-color: white;
 }
+body {
+  background: var(--bg-color);
+}
 
-.container {
+/* :root {
+  --grey-color-medium: rgba(255, 255, 255, 0.6);
+  --grey-color-light: rgba(255, 0255, 255, 0.25);
+  --grey-color-dark: rgba(255, 255, 255, 0.87);
+  --bg-color: black;
+} */
+
+#root {
   font-size: 1.2rem;
   background: var(--bg-color);
 }
@@ -129,6 +139,7 @@
   font-size: 1.2rem;
   margin-left: 7%;
   color: var(--grey-color-medium);
+  background: var(--bg-color);
   /* margin-bottom: 5px;
   margin-top: 5px; */
 }
@@ -197,6 +208,7 @@ button {
   width: 100%;
   padding-left: 15px;
   color: var(--grey-color-medium);
+  background: var(--bg-color);
   /* margin-bottom: 5px;
   margin-top: 5px; */
 }
@@ -236,7 +248,7 @@ button {
   padding: 15px; /* Some padding */
   font-size: 1rem;
   /* color: #555; */
-  color: pink;
+  color: var(--grey-color-light);
   max-width: 700px;
   left: 50%;
   transform: translateX(-50%);

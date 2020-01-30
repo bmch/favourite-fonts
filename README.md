@@ -17,7 +17,7 @@ This list of fonts will appear sorted by popularity.
 ## Tech Stack
 
 The client front-end is made with React.
-The back-end was uses Express.
+The back-end is made with Express.
 
 ## See the application running
 

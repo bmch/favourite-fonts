@@ -1,5 +1,13 @@
+:root {
+  --grey-color-medium: rgba(0, 0, 0, 0.6);
+  --grey-color-light: rgba(0, 0, 0, 0.25);
+  --grey-color-dark: rgba(0, 0, 0, 0.87);
+  --bg-color: white;
+}
+
 .container {
   font-size: 1.2rem;
+  background: var(--bg-color);
 }
 
 .header-container {
@@ -8,8 +16,11 @@
   justify-content: space-between;
   max-width: 1260px;
   margin: 30px auto;
-  color: #72757d;
-  border-bottom: 1px solid #cccccc;
+  /* color: #72757d; */
+  /* color: blue;
+  border-bottom: 1px solid #cccccc; */
+  color: var(--grey-color-medium);
+  border-bottom: 1px solid var(--grey-color-light);
   flex-wrap: wrap;
   padding-bottom: 20px;
 }
@@ -58,15 +69,16 @@
 }
 
 .font-card {
-  border-top: 2px solid grey;
-  /* border: 2px solid grey; */
+  /* border-top: 2px solid grey; */
+  border-top: 1px solid var(--grey-color-medium);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .nav-bar {
-  border: 1.5px solid #dadde3;
+  /* border: 1.5px solid #dadde3; */
+  border: 1px solid var(--grey-color-light);
   border-radius: 45px;
   max-width: 1260px;
   width: 80%;
@@ -102,11 +114,12 @@
   font-size: 1.1rem;
   /* border: 2px dashed green; */
   height: 20%;
+  color: var(--grey-color-dark);
 }
 
 .sample-text {
   vertical-align: middle;
-  /* border: 2px dashed red; */
+  color: var(--grey-color-medium);
   height: 80%;
   vertical-align: middle;
 }
@@ -115,15 +128,28 @@
   border: none;
   font-size: 1.2rem;
   margin-left: 7%;
+  color: var(--grey-color-medium);
   /* margin-bottom: 5px;
   margin-top: 5px; */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--grey-color-medium);
+  opacity: 1; /* Firefox */
 }
 
 .reset {
   margin-left: 6%;
   margin-right: 20px;
+
   /* margin-bottom: 5px;
   margin-top: 5px; */
+}
+
+.fa-redo-alt {
+  font-size: 1.2rem;
+  color: var(--grey-color-medium);
 }
 
 select {
@@ -134,12 +160,14 @@ select {
   font-size: 1.2rem;
   margin-left: 6%;
   margin-right: 6%;
-  background: white;
+  background: var(--bg-color);
 
   padding-left: 15px;
   padding-right: 15px;
   border: none;
-  border-left: 2px solid #cccccc;
+  /* border-left: 2px solid #cccccc; */
+  border-left: 2px solid var(--grey-color-medium);
+  color: var(--grey-color-medium);
 }
 
 .plus-icon {
@@ -163,9 +191,12 @@ button {
 .custom-text-input {
   border: none;
   font-size: 1.2rem;
-  border-left: 2px solid #cccccc;
+  /* border-left: 2px solid #cccccc; */
+  border-left: 2px solid var(--grey-color-medium);
+  /* border-left: 2px solid red; */
   width: 100%;
   padding-left: 15px;
+  color: var(--grey-color-medium);
   /* margin-bottom: 5px;
   margin-top: 5px; */
 }
@@ -204,8 +235,8 @@ button {
 
   padding: 15px; /* Some padding */
   font-size: 1rem;
-  color: #555;
-
+  /* color: #555; */
+  color: pink;
   max-width: 700px;
   left: 50%;
   transform: translateX(-50%);

@@ -4,20 +4,17 @@
   --grey-color-dark: rgba(0, 0, 0, 0.87);
   --bg-color: white;
 }
-body {
-  background: var(--bg-color);
-}
 
-/* :root {
+[data-theme='dark'] {
   --grey-color-medium: rgba(255, 255, 255, 0.6);
   --grey-color-light: rgba(255, 0255, 255, 0.25);
   --grey-color-dark: rgba(255, 255, 255, 0.87);
   --bg-color: black;
-} */
+}
 
-#root {
-  font-size: 1.2rem;
+body {
   background: var(--bg-color);
+  font-size: 1.2rem;
 }
 
 .header-container {
@@ -268,4 +265,22 @@ button {
 
 .loader {
   font-size: 7rem;
+}
+
+.dark-button {
+  background: black;
+  border: 1px solid var(--grey-color-light);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  margin-left: 50px;
+}
+
+.light-button {
+  background: white;
+  border: 1px solid var(--grey-color-light);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
 }

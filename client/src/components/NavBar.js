@@ -3,6 +3,7 @@ import Search from './Search';
 import CustomText from './CustomText';
 import SelectFontSize from './SelectFontSize';
 import Reset from './Reset';
+import DarkLightMode from './DarkLightMode';
 
 export default function NavBar({
   handleChange,
@@ -22,6 +23,7 @@ export default function NavBar({
         handleChangeFontSize={handleChangeFontSize}
         fontSize={fontSize}
       />
+      <DarkLightMode />
       <Reset reset={reset} />
     </div>
   );

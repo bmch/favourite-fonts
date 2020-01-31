@@ -93,6 +93,7 @@ body {
   padding: 10px 2%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .select-font-size {
@@ -134,11 +135,9 @@ body {
 .search-fonts {
   border: none;
   font-size: 1.2rem;
-  margin-left: 7%;
+  margin-left: 3%;
   color: var(--grey-color-medium);
-  background: var(--bg-color);
-  /* margin-bottom: 5px;
-  margin-top: 5px; */
+  /* background: var(--bg-color); */
 }
 
 ::placeholder {
@@ -150,7 +149,9 @@ body {
 .reset {
   margin-left: 6%;
   margin-right: 20px;
+  border-left: 2px solid var(--grey-color-medium);
 
+  padding-left: 20px;
   /* margin-bottom: 5px;
   margin-top: 5px; */
 }
@@ -170,11 +171,12 @@ select {
   margin-right: 6%;
   background: var(--bg-color);
 
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 35px;
   border: none;
   /* border-left: 2px solid #cccccc; */
   border-left: 2px solid var(--grey-color-medium);
+  border-right: 2px solid var(--grey-color-medium);
   color: var(--grey-color-medium);
 }
 
@@ -277,10 +279,22 @@ button {
   margin-left: 50px;
 }
 
+.dark-light-container {
+}
+
 .light-button {
   background: white;
   border: 1px solid var(--grey-color-light);
   border-radius: 50%;
   width: 25px;
   height: 25px;
+}
+
+.fa-search {
+  color: var(--grey-color-medium);
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
 }

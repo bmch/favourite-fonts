@@ -10,7 +10,7 @@ const light = () => {
 
 export default function DarkLightMode() {
   return (
-    <div>
+    <div className="dark-light-container">
       <button className="dark-button" onClick={darkness}></button>
       <button className="light-button" onClick={light}></button>
     </div>

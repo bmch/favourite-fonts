@@ -1,13 +1,22 @@
-# favourite-fonts
+> 🚨🚨 This project is a work in progress! Feedback is appreciated 🚨🚨
 
-This application was created for the Chingu Voyage prework Assignment.
-You can view the requirements for this project [here.](https://github.com/chingu-voyages/voyage-prework-tier3-favfonts)
+# Favourite Fonts
+
+This repository is a favourite fonts application based on specific requirements listed on [this repo.](https://github.com/chingu-voyages/voyage-prework-tier3-favfonts)
+This repository contains both the client front-end and the express server applications.
+
+## Screenshots
+
+<p align="center">
+  <img alt="Application View" src="https://i.imgur.com/MYXPVEx.png">
+</p>
 
 ## Purpose and Functionality
 
-The application uses the Google font API to query for the most popular fonts.
-The application allows you to view and search for Google fonts.
-This list of fonts will appear sorted by popularity.
+The application uses the Google font API to query for the most popular fonts served by
+the good font API.
+
+Features
 
 - Type in some text and see how the font will look.
 - Change the size of the fonts.
@@ -16,9 +25,21 @@ This list of fonts will appear sorted by popularity.
 
 ## Tech Stack
 
-The client front-end is made with React.
-The back-end is made with Express.
+- [React](https://reactjs.org/)
+- [Express](https://expressjs.com/)
 
-## See the application running
+## Live Deployment
 
-You can see the application in action [here.](https://confident-bhaskara-5f44a5.netlify.com/)
+The deployed application can be viewed [here.](https://confident-bhaskara-5f44a5.netlify.com/).
+The React application is hosted on [Netlify](https://www.netlify.com/).
+The Express server which makes the API requests to Google is hosted with [Zeit Now](https://zeit.co/).
+
+## Installation
+
+#### Clone this repository
+
+Use the following:
+
+```shell
+git clone https://github.com/bmch/favourite-fonts.git
+```
